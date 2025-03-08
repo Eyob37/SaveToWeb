@@ -2,7 +2,7 @@
 const firebaseConfig = {
     apiKey: "AIzaSyCzv6OiVIoE-088je9pSFKjUwlSQaWp3hQ",
     authDomain: "massanger-a2479.firebaseapp.com",
-    databaseURL: "https://massanger-a2479-default-rtdb.firebaseio.com",
+    databaseURL: "https://massanger-a2479-default-rtdb.firebaseio.com", // ✅ Added this line
     projectId: "massanger-a2479",
     storageBucket: "massanger-a2479.appspot.com",
     messagingSenderId: "140554568529",
@@ -10,7 +10,7 @@ const firebaseConfig = {
     measurementId: "G-NMFKL8ZMV5"
 };
 
-// ✅ Initialize Firebase
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
