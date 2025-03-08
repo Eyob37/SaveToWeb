@@ -1,11 +1,8 @@
-// Import Firebase modules (Modular SDK)
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, onValue } from "firebase/database";
-
-// Your Firebase configuration
+// Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyCzv6OiVIoE-088je9pSFKjUwlSQaWp3hQ",
   authDomain: "massanger-a2479.firebaseapp.com",
+  databaseURL: "https://massanger-a2479-default-rtdb.firebaseio.com",  // ✅ Add this
   projectId: "massanger-a2479",
   storageBucket: "massanger-a2479.appspot.com",
   messagingSenderId: "140554568529",
@@ -14,13 +11,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
 
 // Save text to Firebase
 function saveText() {
     const text = document.getElementById("inputText").value;
-    set(ref(db, "storedText"), text)
+    firebase.database().ref("storedText").set(text)
         .then(() => {
             console.log("Text saved successfully!");
         })
@@ -30,8 +27,7 @@ function saveText() {
 }
 
 // Retrieve text from Firebase
-const storedTextRef = ref(db, "storedText");
-onValue(storedTextRef, (snapshot) => {
+firebase.database().ref("storedText").on("value", (snapshot) => {
     const text = snapshot.val();
     document.getElementById("output").innerText = text || "No text stored yet.";
 });
