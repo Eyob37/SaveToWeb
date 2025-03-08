@@ -1,4 +1,4 @@
-// Firebase Configuration
+// ✅ Use Firebase Global Object (Works in Browsers)
 const firebaseConfig = {
     apiKey: "AIzaSyCzv6OiVIoE-088je9pSFKjUwlSQaWp3hQ",
     authDomain: "massanger-a2479.firebaseapp.com",
@@ -10,11 +10,11 @@ const firebaseConfig = {
     measurementId: "G-NMFKL8ZMV5"
 };
 
-// Initialize Firebase
+// ✅ Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-// Save text to Firebase
+// ✅ Save text to Firebase
 function saveText() {
     const text = document.getElementById("inputText").value;
     firebase.database().ref("storedText").set(text)
@@ -22,7 +22,7 @@ function saveText() {
         .catch((error) => console.error("Error saving text: ", error));
 }
 
-// Retrieve text from Firebase
+// ✅ Retrieve text from Firebase
 firebase.database().ref("storedText").on("value", (snapshot) => {
     const text = snapshot.val();
     document.getElementById("output").innerText = text || "No text stored yet.";
