@@ -1,13 +1,14 @@
 // Your Firebase configuration (replace with your own)
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    databaseURL: "YOUR_DATABASE_URL",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCzv6OiVIoE-088je9pSFKjUwlSQaWp3hQ",
+  authDomain: "massanger-a2479.firebaseapp.com",
+  projectId: "massanger-a2479",
+  storageBucket: "massanger-a2479.firebasestorage.app",
+  messagingSenderId: "140554568529",
+  appId: "1:140554568529:web:f11de10d3e905e7cf30970",
+  measurementId: "G-NMFKL8ZMV5"
 };
+
 
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
